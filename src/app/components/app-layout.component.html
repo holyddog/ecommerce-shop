@@ -1,0 +1,40 @@
+<div id="sidebar_panel" [ngClass]="'overlay' + ((menu.active)? ' active': '')" (click)="menu.hideMenu()"></div>
+<div id="sidebar" [ngClass]="(menu.active)? 'active': ''" class="d-flex flex-column">
+    <div class="account-menu d-flex flex-row v-center p-3">
+        <div class="shop-pic d-flex v-center h-center mr-3">
+            <i class="material-icons md-36">store</i>
+        </div>
+        <div class="flex">
+            <div class="lead">{{authenService.user.shop.name}}</div>
+            <div>{{authenService.user.name}}</div>
+        </div>
+    </div>
+    <div class="flex v-scroll">
+        <div *ngFor="let m of menus" class="main-menu" [ngClass]="(router.url == m.link)? 'active': ''">
+            <div class="menu-label p-3 d-flex v-center" [ngClass]="((m.children && m.toggle) || router.url.indexOf(m.link) > -1)? 'sub-active': ''" (click)="navigate(m.link, m)">
+                <div class="flex">{{m.text}}</div>
+                <i *ngIf="m.children && !m.toggle" class="material-icons md-18 pl-2">keyboard_arrow_down</i>
+                <i *ngIf="m.children && m.toggle" class="material-icons md-18 pl-2">keyboard_arrow_up</i>
+            </div>
+            <div *ngIf="m.children" class="sub-panel" [ngClass]="(m.toggle)? 'active': ''">
+                <div *ngFor="let sm of m.children" class="sub-menu" [ngClass]="(router.url == sm.link)? 'active': ''" (click)="navigate(sm.link, sm)">{{sm.text}}</div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="main-menu p-3" routerLink="/shop/dashboard" routerLinkActive="active" (click)="menu.hideMenu('/shop/order')">Dashboard</div>
+    <div class="main-menu" routerLink="/shop/setting" routerLinkActive="active">
+        <div class="p-3 d-flex v-center">
+            <div class="flex">Setting</div>
+            <i *ngIf="menu.name == 'setting'" class="material-icons md-18 pl-2">keyboard_arrow_up</i>
+            <i *ngIf="menu.name != 'setting'" class="material-icons md-18 pl-2">keyboard_arrow_down</i>
+        </div>
+        <div class="sub-panel">
+            <a routerLink="/shop/setting/account" routerLinkActive="active" class="sub-menu" (click)="menu.hideMenu()">{{ 'shop_info' | translate }}</a>
+            <a routerLink="/shop/setting/address" routerLinkActive="active" class="sub-menu" (click)="menu.hideMenu()">{{ 'address' | translate }}</a>
+        </div>
+    </div> -->
+    <div class="main-menu p-3 d-flex v-center h-center top-line" (click)="logOut()"><i class="material-icons pr-2">exit_to_app</i>{{ 'logout' | translate }}</div>
+</div>
+<div id="wrapper" class="d-flex">
+    <router-outlet></router-outlet>
+</div>

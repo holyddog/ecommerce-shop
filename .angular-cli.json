@@ -1,0 +1,41 @@
+{
+    "project": {
+        "name": "ecommerce-pos"
+    },
+    "apps": [{
+        "root": "src",
+        "outDir": "dist",
+        "assets": [
+            "assets"
+        ],
+        "index": "index.html",
+        "main": "main.ts",
+        "polyfills": "polyfills.ts",
+        "tsconfig": "tsconfig.app.json",
+        "prefix": "app",
+        "styles": [
+            "assets/css/bootstrap-reboot.css",
+            "assets/css/bootstrap-grid.css",
+            "assets/css/material-form.css",
+            "assets/css/custom.css",
+            "assets/css/jquery.toast.min.css",
+            "assets/css/style.css"
+        ],
+        "scripts": [],
+        "environmentSource": "environments/environment.ts",
+        "environments": {
+            "dev": "environments/environment.ts",
+            "prod": "environments/environment.prod.ts"
+        }
+    }],
+    "lint": [{
+        "project": "src/tsconfig.app.json"
+    }],
+    "defaults": {
+        "styleExt": "css",
+        "component": {},
+        "serve": {
+            "port": 4400
+        }
+    }
+}

@@ -1,0 +1,199 @@
+body {
+    background-color: #f3f3f3;
+    overflow: hidden;
+    font-family: 'Kanit', sans-serif;
+    color: #212121;
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+#sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 3;
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-transition: transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+    background-color: #262f3d;
+}
+
+#sidebar.active {
+    -ms-transform: translateX(280px);
+    -webkit-transform: translateX(280px);
+    transform: translateX(280px);
+}
+
+#sidebar_panel {
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+}
+
+#wrapper {
+    background-color: #cfd8dc;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+@media (max-width: 1199px) {
+    #sidebar {
+        z-index: 4;
+        left: -280px;
+    }
+    #sidebar_panel.active {
+        z-index: 3;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    #wrapper {
+        left: 280px;
+    }
+}
+
+.tbar {
+    height: 56px;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    z-index: 50;
+}
+
+.tbar .title {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+
+.tbar .menu-icon {
+    width: 56px;
+    height: 56px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, .57);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.top-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 1199px) {
+    .tbar .menu-icon {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .tbar .title {
+        padding-left: 0;
+    }
+}
+
+.body {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+}
+
+.paper {
+    position: relative;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.jq-toast-single {
+    color: rgba(255, 255, 255, 0.87);
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.428572;
+}
+
+.jq-toast-single h2 {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.jq-toast-wrap {
+    width: 350px;
+}
+
+.jq-icon-info {
+    background-image: url('../images/ic_info.png');
+}
+
+.jq-icon-error {
+    background-image: url('../images/ic_error.png');
+}
+
+.jq-icon-success {
+    background-image: url('../images/ic_check.png');
+}
+
+@media (max-width: 575px) {}
+
+@media (min-width: 576px) {}
+
+@media (max-width: 767px) {}
+
+@media (min-width: 768px) {
+    .hidden-md-up {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {}
+
+@media (min-width: 992px) {}
+
+@media (max-width: 1199px) {}
+
+@media (min-width: 1200px) {}

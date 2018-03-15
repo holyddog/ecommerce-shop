@@ -1,0 +1,71 @@
+.main-menu {
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    display: block;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.main-menu:active,
+.main-menu:focus,
+.main-menu:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.main-menu.active .menu-label.sub-active {
+    background-color: #19212b;
+    color: #4FC3F7;
+}
+
+.main-menu .menu-label.sub-active {
+    background-color: #19212b;
+}
+
+.main-menu .sub-panel {
+    display: none;
+    padding-bottom: 1rem;
+}
+
+.main-menu .sub-panel.active {
+    display: block;
+    background-color: #19212b;
+}
+
+.main-menu.toggle .material-icons {
+    display: none;
+}
+
+.sub-menu {
+    color: rgba(255, 255, 255, .7);
+    padding: 1rem;
+    display: block;
+    padding: .5rem;
+    padding-left: 2.5rem;
+}
+
+.sub-menu.active {
+    background-color: #19212b;
+    color: #4FC3F7;
+}
+
+.sub-menu:active,
+.sub-menu:focus,
+.sub-menu:hover {
+    background-color: rgba(255, 255, 255, .12);
+}
+
+.account-menu {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.shop-pic {
+    width: 56px;
+    height: 56px;
+    background: #19212b;
+}

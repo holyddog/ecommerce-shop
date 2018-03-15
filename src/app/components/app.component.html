@@ -1,0 +1,15 @@
+<router-outlet></router-outlet>
+<div *ngFor="let d of dialog.dialogs" [id]="d.id" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content {{d.size}}">
+            <div class="modal-header">
+                <h5 class="modal-title">{{d.title}}</h5>
+                <i data-dismiss="modal" aria-label="Close" class="material-icons pointer md-dark">close</i>
+            </div>
+            <div class="modal-body">{{d.body}}</div>
+            <div class="modal-footer">
+                <button *ngFor="let b of d.buttons" type="button" [ngClass]="'btn ' + b.cls" (click)="b.handler()">{{b.text}}</button>
+            </div>
+        </div>
+    </div>
+</div>
